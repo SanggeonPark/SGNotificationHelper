@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SGViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sSI-42-iQh">
+                                <rect key="frame" x="16" y="141" width="568" height="446"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="2kj-k1-1fu"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="aGB-o2-e3e"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAZ-rX-ZTf">
+                                <rect key="frame" x="16" y="33" width="568" height="30"/>
+                                <state key="normal" title="Add Notification">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addLocalNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qtw-Ad-I1t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sl2-9e-XDL">
+                                <rect key="frame" x="515" y="87" width="69" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="GwS-oi-Muf"/>
+                                    <constraint firstAttribute="height" constant="46" id="RcR-ir-14X"/>
+                                </constraints>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="reloadTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nz9-Wf-gZm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXo-Hh-lT2">
+                                <rect key="frame" x="16" y="87" width="101" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="bH3-MY-JTZ"/>
+                                </constraints>
+                                <state key="normal" title="Remove All"/>
+                                <connections>
+                                    <action selector="removeAllNotifications:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pgf-hf-3Ul"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sSI-42-iQh" secondAttribute="bottom" constant="13" id="7WR-UT-aWc"/>
+                            <constraint firstItem="sSI-42-iQh" firstAttribute="top" secondItem="Sl2-9e-XDL" secondAttribute="bottom" constant="8" symbolic="YES" id="C2F-WV-F3z"/>
+                            <constraint firstItem="sSI-42-iQh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ghp-9L-wWn"/>
+                            <constraint firstItem="fXo-Hh-lT2" firstAttribute="leading" secondItem="bAZ-rX-ZTf" secondAttribute="leading" id="HtV-SJ-9ad"/>
+                            <constraint firstItem="bAZ-rX-ZTf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="IUX-Ju-feR"/>
+                            <constraint firstItem="fXo-Hh-lT2" firstAttribute="firstBaseline" secondItem="Sl2-9e-XDL" secondAttribute="baseline" id="PI2-As-9gh"/>
+                            <constraint firstItem="Sl2-9e-XDL" firstAttribute="top" secondItem="bAZ-rX-ZTf" secondAttribute="bottom" constant="24" id="Vy7-1Q-K4L"/>
+                            <constraint firstItem="bAZ-rX-ZTf" firstAttribute="leading" secondItem="sSI-42-iQh" secondAttribute="leading" id="YeD-SX-WJ5"/>
+                            <constraint firstItem="bAZ-rX-ZTf" firstAttribute="trailing" secondItem="Sl2-9e-XDL" secondAttribute="trailing" id="aDG-p6-QZZ"/>
+                            <constraint firstItem="sSI-42-iQh" firstAttribute="trailing" secondItem="Sl2-9e-XDL" secondAttribute="trailing" id="drS-gT-YzT"/>
+                            <constraint firstItem="bAZ-rX-ZTf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="kEA-YZ-rF0"/>
+                            <constraint firstItem="fXo-Hh-lT2" firstAttribute="baseline" secondItem="Sl2-9e-XDL" secondAttribute="firstBaseline" id="qYq-o6-V4J"/>
+                            <constraint firstItem="fXo-Hh-lT2" firstAttribute="top" secondItem="Sl2-9e-XDL" secondAttribute="top" id="woc-8j-zVG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="sSI-42-iQh" id="hHm-0l-2Rh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371" y="418"/>
+        </scene>
+    </scenes>
+</document>
