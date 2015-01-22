@@ -13,18 +13,27 @@
 
 @interface SGNotificationHelper : NSObject
 
-+ (UILocalNotification *)localNotificationForKey:(NSString *)key withRemoteNotification:(NSDictionary *)userInfo;
++ (UILocalNotification *)localNotificationForKey:(NSString *)key userInfo:(NSDictionary *)userInfo;
 
-// returns NO if notification is nil or if notification doesn't have key (user setKey: in "UILocalNotification+SGNotificationHelper.h")
-+ (BOOL)showNotification:(UILocalNotification *)noti;
+/**
+ * if notification is nil or if notification doesn't have key, returns NO.
+ * use setKey: in UILocalNotification+SGNotificationHelper.h
+ */
++ (BOOL)showNotification:(UILocalNotification *)notification;
 
-// returns NO if notification is nil or if key is zero length string (also nil).
-+ (BOOL)showNotification:(UILocalNotification *)noti withKey:(NSString *)key;
+/**
+ * returns NO if notification is nil or if key is zero length string (also nil).
+ */
++ (BOOL)showNotification:(UILocalNotification *)notification withKey:(NSString *)key;
 
-// returns NO if notification is nil or if notification doesn't have key
+/**
+ * returns NO if notification is nil or if notification doesn't have key
+ */
 + (BOOL)removeNotification:(UILocalNotification *)noti;
 
-// returns NO if key is zero length string or nil).
+/**
+ * returns NO if key is zero length string or nil).
+ */
 + (BOOL)removeNotificationForKey:(NSString *)key;
 
 + (void)removeAllNotifications;

@@ -56,8 +56,8 @@ static NSString *CellIdentifier = @"TableViewCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    UILocalNotification *noti = self.notifications[indexPath.row];
-    cell.textLabel.text = noti.alertBody;
+    UILocalNotification *notification= self.notifications[indexPath.row];
+    cell.textLabel.text = notification.alertBody;
     cell.textLabel.numberOfLines = 0;
     return cell;
 }

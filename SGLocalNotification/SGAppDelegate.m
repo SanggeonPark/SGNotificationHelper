@@ -50,7 +50,7 @@
 {
     
     // this remote notification must be "Silent Notification"
-    UILocalNotification *localNoti = [SGNotificationHelper localNotificationForKey:@"specify your key here" withRemoteNotification:userInfo];
+    UILocalNotification *localNoti = [SGNotificationHelper localNotificationForKey:@"specify your key here" userInfo:userInfo];
     [SGNotificationHelper showNotification:localNoti];
     completionHandler(UIBackgroundFetchResultNewData);
 }

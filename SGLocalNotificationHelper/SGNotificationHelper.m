@@ -12,7 +12,7 @@
 
 @implementation SGNotificationHelper
 
-+ (UILocalNotification *)localNotificationForKey:(NSString *)key withRemoteNotification:(NSDictionary *)userInfo
++ (UILocalNotification *)localNotificationForKey:(NSString *)key userInfo:(NSDictionary *)userInfo
 {
     NSNumber *badge = nil;
     NSString *sound = nil;
@@ -80,25 +80,25 @@
     return localNotification;
 }
 
-+ (BOOL)showNotification:(UILocalNotification *)noti;
++ (BOOL)showNotification:(UILocalNotification *)notification;
 {
-    return [self showNotification:noti withKey:noti.key];
+    return [self showNotification:notification withKey:notification.key];
 }
 
-+ (BOOL)showNotification:(UILocalNotification *)noti withKey:(NSString *)key
++ (BOOL)showNotification:(UILocalNotification *)notification withKey:(NSString *)key
 {
-    if (key.length == 0 || noti == nil) {
+    if (key.length == 0 || notification == nil) {
         return NO;
     }
     
-    [SGFileCacheHelper cacheObject:noti forKey:key];
-    [[UIApplication sharedApplication] scheduleLocalNotification:noti];
+    [SGFileCacheHelper cacheObject:notification forKey:key];
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     return YES;
 }
 
-+ (BOOL)removeNotification:(UILocalNotification *)noti
++ (BOOL)removeNotification:(UILocalNotification *)notification
 {
-    return [self removeNotificationForKey:noti.key];
+    return [self removeNotificationForKey:notification.key];
 }
 
 + (BOOL)removeNotificationForKey:(NSString *)key
